@@ -41,24 +41,6 @@ resource "azurerm_windows_virtual_machine" "vm-1" {
     }
 }
 
-
-resource "azurerm_managed_disk" "data-disk-1" {
-  name                 = "${var.ade_owner}-ADE-data-disk1"
-  location             = var.ade_location
-  resource_group_name  = azurerm_resource_group.ade_example.name
-  storage_account_type = "StandardSSD_LRS"
-  create_option        = "Empty"
-  disk_size_gb         = 10
-
-}
-
-resource "azurerm_virtual_machine_data_disk_attachment" "example" {
-  managed_disk_id    = azurerm_managed_disk.data-disk-1.id
-  virtual_machine_id = azurerm_windows_virtual_machine.vm-1.id
-  lun                = "10"
-  caching            = "ReadWrite"
-}
-
 resource "azurerm_public_ip" "ip-1" {
     name = "${var.ade_owner}-ADE-Example-IP-1"
     resource_group_name = azurerm_resource_group.ade_example.name

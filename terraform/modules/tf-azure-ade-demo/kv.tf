@@ -16,7 +16,7 @@ resource "azurerm_key_vault" "kv" {
       bypass = "AzureServices"
       default_action = "Deny"
       virtual_network_subnet_ids = [ data.azurerm_subnet.subnet-1.id, data.azurerm_subnet.subnet-2.id ]
-      ip_rules = [ var.ade_ingress_prefix ]
+      ip_rules = ["0.0.0.0/0"]
     }
 }
 

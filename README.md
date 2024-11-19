@@ -35,3 +35,5 @@ provider "azurerm" {
 ```
 
 4. Download Azure CLI and log in to azure using the `az login` command. Terraform should authenticate to your Azure account using the same credentials.
+
+5. Run `terraform init`, `terraform plan` and `terraform apply` commands as normal in the `terraform/tf-control` directory.

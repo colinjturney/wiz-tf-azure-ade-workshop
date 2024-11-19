@@ -34,7 +34,7 @@ resource "azurerm_network_security_group" "sg-1" {
         protocol    = "Tcp"
         source_port_range = "*"
         destination_port_range = "3389"
-        source_address_prefix = var.ade_ingress_prefix
+        source_address_prefix = var.ade_ingress_prefixes[0]
         destination_address_prefix = "*"
     }
 }

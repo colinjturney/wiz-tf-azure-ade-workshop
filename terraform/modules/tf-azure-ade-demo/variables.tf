@@ -6,6 +6,6 @@ variable "ade_location" {
     type = string
 }
 
-variable "ade_ingress_prefix" {
-    type = string
+variable "ade_ingress_prefixes" {
+    type = list(string)
 }
